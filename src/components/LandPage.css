@@ -1,0 +1,136 @@
+/* LandPage.css */
+
+.landing-page,
+.landpage {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #120f17;
+  color: #ffffff;
+}
+
+/* Background CRT Canvas layer */
+.background {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Foreground content container - perfectly centered */
+.landing-page .content,
+.landing-page .conten,
+.landpage .content,
+.landpage .conten,
+.conten,
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  max-width: 1200px;
+  width: 100%;
+  pointer-events: auto;
+  gap: 2.5rem;
+}
+
+/* Welcome Shuffle typography */
+.welcome {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-page .shuffle-parent,
+.landpage .shuffle-parent {
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: #7aff7c;
+  text-shadow: 0 0 12px rgba(122, 255, 124, 0.7), 0 0 28px rgba(2, 205, 6, 0.45);
+  letter-spacing: 0.1em;
+}
+
+/* Button container centered in page with fade-in effect */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: buttonFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+}
+
+@keyframes buttonFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Large Round Start Button */
+.start-button {
+  width: 160px;
+  height: 160px;
+  min-width: 160px;
+  min-height: 160px;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  font-size: 1.5rem !important;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 0 35px rgba(13, 148, 16, 0.5), 0 12px 30px rgba(0, 0, 0, 0.7);
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease;
+}
+
+.start-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 55px rgba(13, 148, 16, 0.8), 0 16px 40px rgba(0, 0, 0, 0.85);
+}
+
+/* Pill alternative (if a wide capsule is preferred over a circle) */
+.start-button--pill {
+  width: auto;
+  min-width: 240px;
+  height: 74px;
+  min-height: 74px;
+  padding: 0 56px !important;
+  border-radius: 9999px !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .landing-page .shuffle-parent,
+  .landpage .shuffle-parent {
+    font-size: clamp(1.4rem, 6vw, 2.5rem);
+    letter-spacing: 0.05em;
+  }
+
+  .landing-page .content,
+  .landing-page .conten,
+  .conten {
+    padding: 1.5rem 1rem;
+    gap: 2rem;
+  }
+
+  .start-button {
+    width: 140px;
+    height: 140px;
+    min-width: 140px;
+    min-height: 140px;
+    font-size: 1.3rem !important;
+  }
+}
